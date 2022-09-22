@@ -19,6 +19,9 @@ Tool to easily shift an harmonica tab to another key
 
 - Feel free to improve it to add other features, like chromatic harmonicas.
 
+- If a note go out of range for the new key, a warning will appear: "key out of range, tab_pos note"
+ and the note will be omited from the clean tab.
+
 
 **How to use**
 - Go to sample.py and edit source_key, target_key and melody with your tab key and notes.
