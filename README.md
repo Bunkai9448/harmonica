@@ -27,6 +27,45 @@ Tool to easily shift an harmonica tab to another key
 - Go to sample.py and edit source_key, target_key and melody with your tab key and notes.
 - Run sample.py (I recommend echoing to a file in order to easily save the result)
 
+**Result example*
+#####
+Transposing slide, theory:
+G key: ['G', 'A', 'B', 'C', 'D', 'E', 'F']
+C key: ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+slide: C+3 = G
+G key: [1, -1, 2, -2, 3, -3, -3]
+C key: [-2, -4, -1, -5, 1, -6, -6]
+#####
+
+
+Previous Tab.
+Key: G 
+
+-8 8 8 -9 8
+-9 -8 7 -7 7
+-8 -8 -8 7 -7
+7 -7 -6 
+-----
+Transposing melody ...
+key out of range, tab_pos 1 note -8
+key out of range, tab_pos 4 note -9
+key out of range, tab_pos 6 note -9
+key out of range, tab_pos 7 note -8
+key out of range, tab_pos 9 note -7
+key out of range, tab_pos 11 note -8
+key out of range, tab_pos 12 note -8
+key out of range, tab_pos 13 note -8
+key out of range, tab_pos 15 note -7
+key out of range, tab_pos 17 note -7
+Melody transposed. 
+
+New Clean Tab.
+Key: C 
+
+4 4 4 3 3
+3 3 -10 
+-----
+
 **Author**
 
  - Bunkai
