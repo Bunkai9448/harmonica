@@ -4,6 +4,7 @@ Tool to easily shift an harmonica tab to another key
 **Documentation used**
 - Tab rulers: https://www.harptabs.com/displayfile.php?ID=31 
 - Shift logic: https://qr.ae/pvWj1O
+- https://www.quora.com/How-do-I-translate-harmonica-tabs-written-for-a-C-song-into-something-that-I-can-play-on-an-F-harp-Or-an-A-harp-Those-are-the-only-two-I-have-at-the-moment
 
 
 **Prerequisites**
@@ -19,8 +20,6 @@ Tool to easily shift an harmonica tab to another key
 
 - Feel free to improve it to add other features, like chromatic harmonicas.
 
-- If a note go out of range for the new key a warning will appear: "key out of range, tab_pos note"
- and the note will be omited from the clean tab.
 
 
 **How to use**
