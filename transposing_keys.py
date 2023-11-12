@@ -8,6 +8,10 @@
 	The goal of this file is to convert any harmonica tab between different keys.
 	In the desire of people being able to make use of any prior written tab instead
 	of having to go hunting one written for their key.
+
+ 	This will help you to easily translate the tabs from one key to another.
+	Keep in mind that the above is a basic method and the final result may not be 100% accurate.
+	It's always best to check the final tab
 """
 
 print()
@@ -31,19 +35,21 @@ C_key_num = []
 
 slide = -3	# adjust to be made
 	
-# adjustment
+# Fill the new key (Rewrite the key to the new one)
 for i in range(0,len(G_key_num)):
-	if G_key_num[i] < 0 and (slide < 0) and (G_key_num[i]-abs(slide) < -10) :
-		print('key out of range, tab_pos',i+1, 'note', G_key_num[i])
-		
-	elif G_key_num[i] > 0 and (slide > 0) and  (G_key_num[i]+abs(slide) > 10) :
-		print('key out of range, tab_pos',i+1, 'note', G_key_num[i])
-	
-	elif (G_key_num[i]+slide) == 0: 
-		C_key_num.append(1)
-	else:
-		C_key_num.append(G_key_num[i]+slide)
-	i += 1
+
+	noteToTab = 0
+	# Do the slide shift from each number in the tab
+	noteToTab = G_key_num[i]+slide
+	# If the number is 0 or below, adjust; add 10
+	if noteToTab <= 0:
+		noteToTab += 10
+	# If the number is above 10, adjust; delete the slide subtract 10
+	elif noteToTab > 10:
+		noteToTab -= 10
+
+	C_key_num.append(noteToTab)
+	i += 1	
 	
 print('G key:', G_key_num)
 print('C key:', C_key_num)
@@ -58,17 +64,18 @@ def transpose_Melody(melody,newTab,source_key,target_key):
 	
 	# adjustment
 	for i in range(0,len(melody)):
-		if melody[i] < 0 and (slide < 0) and (melody[i]-abs(slide) < -10) :
-			print('key out of range, tab_pos',i+1, 'note', melody[i])
-		
-		elif melody[i] > 0 and (slide > 0) and  (melody[i]+abs(slide) > 10) :
-			print('key out of range, tab_pos',i+1, 'note', melody[i])
-	
-		elif (melody[i]+slide) == 0: 
-			newTab.append(1)
-		else:
-			newTab.append(melody[i]+slide)
-		i += 1
+		noteToTab = 0
+		# Do the slide shift from each number in the tab
+		noteToTab = melody[i]+slide
+		# If the number is 0 or below, add 10
+		if noteToTab <= 0:
+			noteToTab += (10+slide)
+		# If the number is above 10, subtract 10
+		elif noteToTab > 10:
+			noteToTab -= 10
+
+		newTab.append(noteToTab)
+		i += 1	
 	print('Melody transposed.', "\n")
 
 # Display the new tab in a nice way (with break lines):
